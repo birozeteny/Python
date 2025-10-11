@@ -2,7 +2,6 @@ from collections import Counter, defaultdict
 
 data_list_string_format = "Név;Életkor;Város Németh Kamilla;19;Debrecen Fekete Géza;18;Pécs Kovács Péter;27;Budapest Kiss Tibor;20;Debrecen Szabó Erzsébet;21;Budapest Szilágyi Ede;18;Pécs Agárdi Pál;26;Budapest Pálosi Richárd;23;Budapest Budai Máté;19;Debrecen Karácsony Antal;20;Budapest Aradi Márta;27;Pécs Piros Adél;29;Debrecen Bíró Zsolt;16;Budapest Szabados Attila;25;Debrecen Román Sarolta;24;Budapest Virág Bertalan;22;Pécs Varga Imre;18;Budapest Tóth Sándor;22;Debrecen Nagy Ibolya;23;Pécs Horváth Ferenc;17;Budapest Balogh Edina;26;Budapest"
 
-# 1. Adatok listává alakítása (list comprehension)
 records_raw = data_list_string_format.split(' ')[1:]
 data_list = [
     record.split(';')
@@ -13,8 +12,6 @@ data_list = [
 print("## 1. Adatlista (List Comprehension)")
 print(data_list)
 
-
-# 2. Az adatok kiírása
 def print_data(data, show_name=True, show_age=True, show_city=True):
     header = []
     if show_name: header.append("Név")
@@ -23,11 +20,11 @@ def print_data(data, show_name=True, show_age=True, show_city=True):
 
     if not header: return
 
-    # Fejléc kiírása (egyszerűen)
+
     print(f"\nFejléc: {', '.join(header)}")
 
 
-    # Adatok kiírása (egyszerűen)
+   
     for row in data:
         output_row_values = []
         if show_name: output_row_values.append(row[0])
@@ -82,17 +79,16 @@ average_age = sum(p['age'] for p in data_dict_list) / len(data_dict_list)
 
 print("\n## 4. Elemzés")
 
-# Életkor szerinti kiírás
+
 print("\n### Életkor Szerinti Rendszerezés:")
 for group, people in grouped_data.items():
     print(f"**{group} évesek ({len(people)} fő):** {', '.join(people)}")
 
-# Statisztikai kiírás
+
 print("\n### Statisztikai Adatok:")
 print(f"A **leggyakoribb város** a(z) **{most_common_city}** ({count} fő).")
 print(f"Az adathalmaz **átlagéletkora**: **{average_age:.2f}** év.")
 
-# Azonos városban élők listázása
 people_by_city = defaultdict(list)
 for person in data_dict_list:
     people_by_city[person['city']].append(format_name(person['nev']))
@@ -100,4 +96,5 @@ for person in data_dict_list:
 print("\n### Azonos Városban Élők (Vezetéknév K. formátum):")
 for city, people in people_by_city.items():
     if len(people) > 1:
+
         print(f"**{city}** lakói: {', '.join(people)}")
