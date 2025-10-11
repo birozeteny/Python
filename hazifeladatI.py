@@ -22,16 +22,15 @@ szotar = {
     for fogalom, meghatarozas in zip(fogalmak, meghatarozasok)
 }
 
-# 3. feladat (a véletlen elem kiírását eltávolítottam a fő kvíz elől, ha nem kérik külön,
-#            mert zavarja a kvíz formátumát)
+# 3. feladat
 
-# A kvíz logika és segédfüggvények
+
 helyes_valaszok = 0
 helytelen_valaszok = 0
 osszes_kerdes = len(szotar)
 kviz_eredmenyek = []
 
-# Kevert kulcslista, hogy mindenre rákérdezzünk egyszer (7. pont)
+
 kerdesek_listaja = list(szotar.keys())
 random.shuffle(kerdesek_listaja)
 
@@ -117,4 +116,5 @@ if len(kviz_eredmenyek) == osszes_kerdes:
 
 # Fájlba írás (9. feladat)
 if kviz_eredmenyek:
+
     file_kiiras(kviz_eredmenyek)
