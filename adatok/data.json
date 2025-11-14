@@ -1,0 +1,24 @@
+{
+    "matches": [
+        {
+            "round": "Matchday 1",
+            "date": "2025-01-01",
+            "team1": "Csapat A",
+            "team2": "Csapat B",
+            "score": {
+                "ht": [0, 1],
+                "ft": [2, 1]
+            }
+        },
+        {
+            "round": "Matchday 1",
+            "date": "2025-01-01",
+            "team1": "Csapat C",
+            "team2": "Csapat D",
+            "score": {
+                "ht": [2, 2],
+                "ft": [3, 2]
+            }
+        }
+    ]
+}
